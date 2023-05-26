@@ -1,0 +1,46 @@
+<%- include('template/head.ejs',{tittleWeb:"Home Page"}) %>
+
+  <div class="container">
+    <a class="btn btn-success btn-block my-4" href="/pets/crear">Crear</a>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (mascotas.length>0){ %>
+          <% mascotas.forEach(mascota=>{%>
+            <tr>
+              <th scope="row">
+                <%= mascota.id%>
+              </th>
+              <td>
+                <%= mascota.nombre%>
+              </td>
+              <td>
+                <%= mascota.descripcion%>
+              </td>
+              <td>@mdo</td>
+            </tr>
+            <% })%>
+
+
+              <% } else{ %>
+                <tr>
+                  <td colspan="4" class="text-center">
+                    <h3>No hay mascotas registradas</h3>
+                  </td>
+                  <td>
+                  </td>
+                  <td></td>
+                </tr>
+
+                <%}%>
+      </tbody>
+  </div>
+
+  <%- include('template/scripts.ejs') %>
