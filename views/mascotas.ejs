@@ -1,7 +1,7 @@
 <%- include('template/head.ejs',{tittleWeb:"Home Page"}) %>
 
   <div class="container">
-    <a class="btn btn-success btn-block my-4" href="/pets/crear">Crear</a>
+    <a class="btn btn-success btn-block my-4" href="/pets/crear">Register new pet</a>
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -24,7 +24,7 @@
               <td>
                 <%= mascota.descripcion%>
               </td>
-              <td>@mdo</td>
+              <td><a href="/pets/<%= mascota.id%>" class="btn btn-warning btn-sm">Edit</a></td>
             </tr>
             <% })%>
 
